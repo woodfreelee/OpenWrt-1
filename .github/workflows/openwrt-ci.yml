@@ -14,9 +14,9 @@ on:
     - cron: 0 20 * * *
   release:
     types: [published]
-  # push:
-  #   branches: 
-  #     - master
+  push:
+    branches: 
+      - master
 
 jobs:
 
@@ -61,7 +61,7 @@ jobs:
 
       - name: Generate configuration file
         run: |
-          cp ./makeconfig.d/x86_64.config ./.config
+          cp ./makeconfig.d/k2p.config ./.config
           make defconfig
 
       - name: Make download
